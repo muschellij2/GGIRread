@@ -11,7 +11,7 @@
       "No CRAN mirror set, so using ", repos,
       " to check GGIRread package version")
   }
-  pkgs <- available.packages(repos = repos)
+  pkgs <- utils::available.packages(repos = repos)
   cran_version <- package_version(pkgs[which(pkgs[,1] == "GGIRread"),"Version"])
   local_version <- utils::packageVersion("GGIRread")
   behind_cran <- cran_version > local_version
